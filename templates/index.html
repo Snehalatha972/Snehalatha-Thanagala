@@ -1,0 +1,140 @@
+{% load static %}<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>MY First Project</title>
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>-->
+  	<!--<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.bundle.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.header{
+			height: 10%;
+			width: 100%;
+			position: fixed;
+			top: 0%;
+			left: 0%;
+			background-color: rgb(100,200,100); 
+		}
+		.footer{
+			height: 10%;
+			width: 100%;
+			position: fixed;
+			top: 90%;
+			left: 0%;
+			background-color: black;
+			color: white;
+			font-weight: bold;
+			padding: 1%;
+		}
+		.content_pane{
+			height: 80%;
+			width: 100%;
+			position: fixed;
+			top: 10%;
+			left: 0%;
+		}
+		.menu-content{
+			display: block;
+			width: 100%
+		}
+		.menu-content li{
+			display: inline;
+			padding: 15px;
+			margin-top: 20px;
+			font-variant: small-caps;
+			font-weight: bold;
+		}
+		.navbar-nav li>a:hover{
+			color: red;
+			cursor: pointer;
+			text-decoration: underline;
+		}
+		.navbar-nav li>a{
+			color: white;
+			font-variant: small-caps;
+			font-weight: bold;
+		}
+		.project-heading{
+			border-right: 5px solid white;
+			font-variant: small-caps;
+			font-weight: bold;
+			color: white;
+			text-shadow: 5px 5px 1px black;
+			font-size: 35px
+		}
+		.menu{
+			float: left;
+			font-size: 20px;
+		}
+		.dropdown-item {
+			color: rgb(100,100,100);
+			font-weight: bold;
+			font-variant: small-caps;
+			font-size: 20px;
+		}
+		.dropdown-item>a:hover{
+			background-color: rgb(100,200,100);
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="header">
+			<div class="row">
+				<div class="col-md-3 text-center project-heading">
+					<p>LTRC</p>
+				</div>
+				<div class="col-md-5 menu">
+					<nav class="navbar navbar-expand-md">
+  						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    						<ul class="navbar-nav ml-auto">
+	      						<li class="nav-item active">
+	        						<a class="nav-link" href="{% url 'home' %}">Home</a>
+	      						</li>
+	     						<li class="nav-item">
+	        						<a class="nav-link" href="{% url 'about' %}">About</a>
+	      						</li>
+	      						<li class="nav-item dropdown">
+	        						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+	          							Projects
+	        						</a>
+	        						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          							<a class="dropdown-item" href="{% url 'abs_summarize' %}">Abstractive Summarization</a>
+	        							<div class="dropdown-divider"></div>
+	        							<a class="dropdown-item" href="{% url 'ext_summarize' %}">Extractive Summarization</a>
+	        						</div>
+	     						</li>
+      							<li class="nav-item">
+        							<a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+      							</li>
+      							<li class="nav-item">
+      								<a class="nav-link" href="#">Help?</a>
+      							</li>
+    						</ul>
+  						</div>
+					</nav>
+				</div>
+			</div>
+		<div class="container content_pane">
+			{% block content %}
+			{% endblock content %}
+		</div>
+		<div class="container-fluid footer">
+			<p class="text-center">&copy;IIITH Summer Internship, 2020</p>
+		</div>
+	</div>
+</body>
+</html>
