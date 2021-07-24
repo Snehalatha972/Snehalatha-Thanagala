@@ -1,2 +1,3 @@
 # Snehalatha-Thanagala
-Web Interface for Summarization
+Here I was created Web Interface to Visualize Real time data.
+
